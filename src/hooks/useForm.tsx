@@ -32,7 +32,6 @@ export default function useForm() {
 
   const validateForm = () => {
     const newErrors: IForm = { name: '', email: '', message: '' };
-    console.log(Object.keys(newErrors));
 
     if (!validators.name.test(form.name)) {
       newErrors.name = getNameErrorMessage(form.name.length);

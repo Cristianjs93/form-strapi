@@ -11,6 +11,8 @@ export default function Input({
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   errors: string;
 }) {
+  const placeholder = `Type your ${label.toLowerCase()}`;
+
   return (
     <input
       id={`input-${type}`}
@@ -18,7 +20,7 @@ export default function Input({
       className={errors && 'invalid-input'}
       type={type}
       onChange={onChange}
-      placeholder={label}
+      placeholder={placeholder}
       autoComplete='off'
     />
   );

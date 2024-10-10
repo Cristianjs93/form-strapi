@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
 import useForm from '../hooks/useForm';
-import InputFactory from './InputFactory';
+import InputFactory from '../factories/InputFactory';
 import '../styles/form.css';
 
 export default function Form() {
@@ -17,24 +17,9 @@ export default function Form() {
 
   return (
     <form className='form' onSubmit={handleSubmit}>
-      <InputFactory
-        type='text'
-        label='Name'
-        onChange={handleChange}
-        errors={errors.name}
-      />
-      <InputFactory
-        type='email'
-        label='Email'
-        onChange={handleChange}
-        errors={errors.email}
-      />
-      <InputFactory
-        type='textarea'
-        label='Message'
-        onChange={handleChange}
-        errors={errors.message}
-      />
+      {InputFactory('text', 'Name', handleChange, errors.name)}
+      {InputFactory('email', 'Email', handleChange, errors.email)}
+      {InputFactory('textarea', 'Message', handleChange, errors.message)}
       <button type='submit' className='form-button'>
         Submit
       </button>

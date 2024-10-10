@@ -11,4 +11,11 @@
   border-radius: 5px;
   background-color: #6c5ce7;
   cursor: pointer;
+  outline: none;
+}
+
+.form-button:hover,
+.form-button:focus {
+  outline: 2px solid #a29bfe;
+  box-shadow: 0 0 5px #a29bfe;
 }

@@ -3,12 +3,14 @@ export function getNameErrorMessage(length: number) {
     ? 'Name can not be empty'
     : length < 3
     ? 'Name must be at least 3 characters long'
-    : 'Invalid name';
+    : 'Name must have only letters';
   return message;
 }
 
 export function getEmailErrorMessage(length: number) {
-  const message = !length ? 'Email can not be empty' : 'Invalid email';
+  const message = !length
+    ? 'Email can not be empty'
+    : 'Invalid email. e.g., test@example.com';
   return message;
 }
 
