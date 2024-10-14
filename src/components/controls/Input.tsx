@@ -1,26 +1,25 @@
 import { ChangeEvent } from 'react';
 
 export default function Input({
-  type,
   label,
+  value,
   onChange,
   errors,
 }: {
-  type: string;
   label: string;
+  value: string;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   errors: string;
 }) {
-  const placeholder = `Type your ${label.toLowerCase()}`;
-
   return (
     <input
-      id={`input-${type}`}
-      name={label.toLocaleLowerCase()}
+      type='text'
+      id={`input-${label}`}
+      name={label}
       className={errors && 'invalid-input'}
-      type={type}
+      value={value}
       onChange={onChange}
-      placeholder={placeholder}
+      placeholder={`Type your ${label}`}
       autoComplete='off'
     />
   );

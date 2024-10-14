@@ -1,25 +1,24 @@
 import { ChangeEvent } from 'react';
 
 export default function TextArea({
-  type,
   label,
+  value,
   onChange,
   errors,
 }: {
-  type: string;
   label: string;
+  value: string;
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
   errors: string;
 }) {
-  const placeholder = `Write a ${label.toLowerCase()}`;
-
   return (
     <textarea
-      id={`input-${type}`}
-      name={label.toLocaleLowerCase()}
+      id={`input-${label}`}
+      name={label}
       className={errors && 'invalid-input'}
+      value={value}
       onChange={onChange}
-      placeholder={placeholder}
+      placeholder={`Write a ${label}`}
       rows={3}
       autoCorrect='on'
       autoComplete='off'

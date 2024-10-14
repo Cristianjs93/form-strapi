@@ -6,6 +6,7 @@ import '../styles/input-factory.css';
 export default function InputFactory(
   type: string,
   label: string,
+  value: string,
   onChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
   errors: string
 ) {
@@ -14,8 +15,8 @@ export default function InputFactory(
     case 'textarea':
       inputElement = (
         <TextArea
-          type={type}
           label={label}
+          value={value}
           onChange={onChange}
           errors={errors}
         />
@@ -23,7 +24,12 @@ export default function InputFactory(
       break;
     default:
       inputElement = (
-        <Input type={type} label={label} onChange={onChange} errors={errors} />
+        <Input
+          label={label}
+          value={value}
+          onChange={onChange}
+          errors={errors}
+        />
       );
   }
 
