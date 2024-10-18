@@ -8,6 +8,12 @@ This project is a form that implements validation on all its fields using regula
 - **Custom hook**: The `useForm` hook manages form state and validation.
 - **Stripe integration**: The form is designed to connect to a custom Stripe plugin via an HTTP request, creating new records in the plugin's database.
 
+## Technologies Used
+
+- **React**: JavaScript library for building user interfaces.
+- **Vite**: A fast development build tool for modern web projects.
+- **react-toastify**: Notifications for your app with ease.
+
 ## Installation
 
 1. Clone the repository:
@@ -47,6 +53,16 @@ This project is a form that implements validation on all its fields using regula
 ## Environment
 
 Define a `VITE_API_URL` variable in your .env file that points to the plugin's api
+
+## Screenshots
+
+![empty-form](./public/assets/empty-form.png)
+_*Empty state for form*_
+
+<br/>
+
+![validation-with-notification](./public/assets/error-form.png)
+_*Validation errors with notification*_
 
 ## Custom Hook (`useForm`)
 
